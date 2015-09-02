@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tags display</title>
+	</head>
+	<body>
+		<h1>All tag</h1>
+		<ul id="tags">
+			<% @tags.each do |t| %>
+			<li>
+				<%= link_to t.name, tag_path(t) %>
+				<%= link_to "delete", tag_path(t), method: :delete,data: {confirm: "Really delete the article?"} %>
+			</li>
+			<% end %>
+		</ul>
+
+		
+	</body>
+</html>
